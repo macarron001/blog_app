@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update!(article_params)
-      redirect_to "/articles"
+      redirect_to "/articles/#{@article.id}"
     end
   end
 
