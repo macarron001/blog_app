@@ -37,6 +37,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.destroy(params[:id])
+
+    if @article.destroy!
+      redirect_to "/articles"
+    end
   end
 
   private
