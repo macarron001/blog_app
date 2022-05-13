@@ -10,7 +10,8 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new
-    @article.description = params[:article][:description]
+    @article.title = params[:article][:title]
+    @article.body = params[:article][:body]
 
     if @article.save
       redirect_to articles_path
@@ -24,7 +25,10 @@ class ArticlesController < ApplicationController
   end
 
   def update
-
+    @article = Article.find(params[:id])
+    if @article.update!(article_params)
+      redirect_to "/articles"
+    end
   end
 
   def delete
