@@ -20,6 +20,7 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'rails-erd', group: :development
 gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
+gem "haml-rails", "~> 2.0"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
