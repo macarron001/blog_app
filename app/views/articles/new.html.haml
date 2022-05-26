@@ -1,0 +1,18 @@
+= form_with model: @article, local: true do |f|
+  %br/
+  %br/
+  %div.d-flex.justify-content-center.w-100
+    %div.card.mb-3.d-flex.align-items-center.p-5{:style => "width: 30rem"}
+      %p.w-30
+        = f.label :title
+        %br/
+        = f.text_field :title
+        %br/
+      %p
+        = f.label :body
+        %br/
+        = f.text_field :body
+        %br/
+      %p
+        = f.submit
+

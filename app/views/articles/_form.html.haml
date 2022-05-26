@@ -1,0 +1,16 @@
+= form_with model: @article, local: true do |f|
+  %br/
+  %br/
+  %div.form-control.mb-3
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+      %br/
+    %p
+      = f.label :body
+      %br/
+      = f.text_field :body
+      %br/
+    %p
+      = f.submit
