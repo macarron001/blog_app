@@ -1,0 +1,13 @@
+%br/
+%br/
+%br/
+#category-show-wrapper.d-flex.flex-column.justify-content-center.align-items-center
+  .card.d-flex.flex-column.justify-content-center.align-items-center{:style => "width: 25rem; height: 10rem"}
+    .card-body.d-flex.flex-column.justify-content-center.align-items-center
+      %h3#entry-content.card-title= @comment.body
+    .d-flex.w-100.justify-content-end
+      %p#note-date.card-text= @comment.created_at.strftime("%B %d, %Y at %I:%M %p")
+  .d-flex.justify-content-end.pt-3{:style => "width: 25rem"}
+    = link_to "Return", article_comments_path(@article), id:"edit-entry-link", class:"btn btn-outline-secondary"
+    = link_to "Edit", edit_article_comment_path(@article), id:"edit-entry-link", class:"btn btn-outline-warning"
+    = button_to "Delete", article_comment_path(@article, @comment), method: :delete, class:"btn btn-outline-danger"

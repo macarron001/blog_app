@@ -1,0 +1,13 @@
+= form_with model: [@article, @comment], local: true do |f|
+  %p
+    - if @comment.errors.any?
+      %ul
+        - @comment.errors.full_messages.each do |message|
+          %li= message
+  .container.mt-4
+    %div
+      .form-group.mb-3
+        = f.text_area :body, placeholder: "Place a note here", class:"form-control"
+    .d-flex.justify-content-end
+      = link_to "Back to your entries", articles_path, id:"new-note-link", class:"btn btn-outline-secondary"
+      = f.submit

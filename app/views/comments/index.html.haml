@@ -1,0 +1,19 @@
+%p#notice= notice
+%br/
+%br/
+.container
+  %table.table.table-hover.table-bordered
+    %thead.thead-dark
+      %tr
+        %th{:scope => "col"} Title
+        %th{:scope => "col"} Date
+    %tbody
+      - @comments.each do |comment|
+        %tr{:scope => "row"}
+          %td= comment.body
+          %td= comment.created_at.strftime("%F")
+          %td= link_to "Show", article_comment_path(@article, comment.id)
+  %br/
+  .d-flex.justify-content-end
+    = link_to "Add Comment", new_article_comment_path(@article), class:"btn btn-outline-secondary m-1"
+    = link_to "Return", article_path(@article), class:"btn btn-outline-secondary m-1"
